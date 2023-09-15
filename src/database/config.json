@@ -1,0 +1,10 @@
+[
+    "Hospital",
+    "doctor",
+    "1234567890",
+    {
+        "dialect": "postgres",
+        "host": "localhost",
+        "port": 5432
+    }
+]
