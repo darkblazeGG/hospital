@@ -12,7 +12,7 @@ define().then(async database => {
     let now = new Date()
     now = new Date(`${now.getMonth() + 1 < 10 ? '0' : ''}${now.getMonth() + 1}.${now.getDate() < 10 ? '0' : ''}${now.getDate()}.${now.getFullYear()}`)
 
-    let slots = [...new Array(16)].map((_, index) => new Date(+now + 30 * 60 * 1000 * index))
+    let slots = [...new Array(16)].map((_, index) => new Date(+now + 8 * 60 * 60 * 1000 + 30 * 60 * 1000 * index))
 
     schedule = await database.setTomorrowSchedule({ doctor_id: doctor.id, date: `${now.getDate() < 10 ? '0' : ''}${now.getDate()}.${now.getMonth() + 1 < 10 ? '0' : ''}${now.getMonth() + 1}.${now.getFullYear()}`, slots }).catch(console.error)
     if (!schedule)
