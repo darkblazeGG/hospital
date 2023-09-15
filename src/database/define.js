@@ -45,10 +45,6 @@ class DataBase {
         return this.#setEmailed({ models: { Appointment: this.#Appointment }, args: { id } })
     }
 
-    getFree() {
-        return this.#getFree()
-    }
-
     setAppointment({ id, user_id }) {
         return this.#setAppointment({ sequelize: this.#sequelize, models: { User: this.#User, Appointment: this.#Appointment }, args: { id, user_id } })
     }
