@@ -1,3 +1,6 @@
+const log4js = require('log4js')
+const logger = log4js.getLogger('database')
+
 function getFree({ models: { Doctor, Schedule, Appointment }, args: { date } }) {
     return new Promise((resolve, reject) => {
         Doctor.findAll({
@@ -15,7 +18,7 @@ function getFree({ models: { Doctor, Schedule, Appointment }, args: { date } }) 
                     }
                 }
             }
-        }).then(resolve).catch(reject)
+        }, { logging: logger.info.bind(logger) }).then(resolve).catch(reject)
     })
 }
 
